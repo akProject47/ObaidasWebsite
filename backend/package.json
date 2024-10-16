@@ -2,7 +2,13 @@
   "name": "backend",
   "version": "0.0.0",
   "main": "index.js",
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+  "scripts": {
+      "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "morgan": "^1.10.0"
+  }
 }

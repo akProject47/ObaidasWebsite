@@ -6,6 +6,5 @@
     "build": "webpack --config webpack.config.js",
     "start": "webpack serve --config webpack.config.js --open"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {}
 }
