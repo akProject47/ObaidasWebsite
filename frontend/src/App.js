@@ -2,16 +2,12 @@ import React from 'react';
 import './styles/App.css';
 import useImageLoader from './hooks/imageLoader';
 
-const App = () => {
-  const logoSrc = useImageLoader('/resources/SandvikensautomotiveLogo.png');
-
-  return (
-    <>
+const Navbar = ({ logoSrc }) => (
   <header>
     <div className="navbar">
-        <a href="/">
-          {logoSrc && <img src={logoSrc} alt='Company Logo' />}
-        </a>
+      <a href="/">
+        {logoSrc && <img src={logoSrc} alt='Company Logo' />}
+      </a>
       <nav>
         <ul>
           <li><a href="#services">Services</a></li>
@@ -22,27 +18,28 @@ const App = () => {
       </nav>
     </div>
   </header>
+);
 
+const Hero = () => (
   <section id="hero">
     <div className="hero-content">
       <h2>Your Trusted Car Mechanic</h2>
       <p>We keep your car running like new.</p>
       <a href="#services" className="cta">Our Services</a>
       <div className="car-logo-slider">
-          <div className="car-logo-track">
-            <img src='../public/resources/logos/bmw-logo.png' alt="BMW Logo" />
-            <img src='../public/resources/logos/mercedes-logo.png' alt="Mercedes Logo" />
-            <img src='../public/resources/logos/audi-logo.png' alt="Audi Logo" />
-            <img src='../public/resources/logos/tesla-logo.png' alt="Tesla Logo" />
-            <img src='../public/resources/logos/ford-logo.png' alt="Ford Logo" />
-            <img src='../public/resources/logos/ford-logo.png' alt="Ford Logo" />
-            <img src='../public/resources/logos/ford-logo.png' alt="Ford Logo" />
-            <img src='../public/resources/logos/ford-logo.png' alt="Ford Logo" />
-            </div>
+        <div className="car-logo-track">
+          <img src='../public/resources/logos/bmw-logo.png' alt="BMW Logo" />
+          <img src='../public/resources/logos/mercedes-logo.png' alt="Mercedes Logo" />
+          <img src='../public/resources/logos/audi-logo.png' alt="Audi Logo" />
+          <img src='../public/resources/logos/tesla-logo.png' alt="Tesla Logo" />
+          <img src='../public/resources/logos/ford-logo.png' alt="Ford Logo" />
         </div>
+      </div>
     </div>
   </section>
+);
 
+const Services = () => (
   <section id="services">
     <h2>Our Services</h2>
     <div className="service-list">
@@ -60,33 +57,49 @@ const App = () => {
       </div>
     </div>
   </section>
+);
 
+const About = () => (
   <section id="about">
     <h2>About Us</h2>
     <p>We are a team of experienced mechanics who are passionate about keeping your car in top shape.</p>
   </section>
+);
 
+const Contact = () => (
   <section id="contact">
     <h2>Contact Us</h2>
     <form id="contact-form">
       <label htmlFor="name">Name:</label>
-      <input type="text" id="name" name="name" required/>
-
+      <input type="text" id="name" name="name" required />
       <label htmlFor="email">Email:</label>
-      <input type="email" id="email" name="email" required/>
-
+      <input type="email" id="email" name="email" required />
       <label htmlFor="message">Message:</label>
       <textarea id="message" name="message" required></textarea>
-
       <button type="submit" className="btn-submit">Send</button>
     </form>
   </section>
+);
 
+const Footer = () => (
   <footer>
     <p>&copy; 2024 Sandvikensautomotive. All rights reserved.</p>
   </footer>
-  </>
-  )
+);
+
+const App = () => {
+  const logoSrc = useImageLoader('/resources/SandvikensautomotiveLogo.png');
+
+  return (
+    <>
+      <Navbar logoSrc={logoSrc} />
+      <Hero />
+      <Services />
+      <About />
+      <Contact />
+      <Footer />
+    </>
+  );
 };
 
 export default App;
