@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import './styles/App.css'; // Import your styles here
-import useImageLoader from './components/imageLoader';
+import React from 'react';
+import './styles/App.css';
+import useImageLoader from './hooks/imageLoader';
 
 const App = () => {
   const logoSrc = useImageLoader('/resources/SandvikensautomotiveLogo.png');

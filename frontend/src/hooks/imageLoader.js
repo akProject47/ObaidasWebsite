@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
+import { API_URL } from '../../../config'
 
 const useImageLoader = (path) => {
   const [imageSrc, setImageSrc] = useState('');
 
   useEffect(() => {
     if (path) {
-      fetch(`http://localhost:5000${path}`)
+      fetch(`${API_URL}${path}`)
         .then(response => response.blob())
         .then(imageBlob => {
           const imageObjectURL = URL.createObjectURL(imageBlob);
