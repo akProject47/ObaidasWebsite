@@ -10,20 +10,25 @@ const Navbar = ({ logoSrc }) => (
       </a>
       <nav>
         <ul>
-          <li><a href="#services">Services</a></li>
           <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#booking" className="btn-book">Book Now</a></li>
+          <li><a href="#services" className="btn-book">Our Services</a></li>
         </ul>
       </nav>
     </div>
   </header>
 );
 
-const Hero = () => (
+const Hero = ({ logoSrc }) => (
   <section id="hero">
     <div className="hero-content">
-      <h2>Your Trusted Car Mechanic</h2>
+    <div className="logoCenter">
+    <a href="/">
+        {logoSrc && <img src={logoSrc} alt='Company Logo' />}
+      </a>
+    </div>
+      <h2>Sandvikensautomotive</h2>
       <p>We keep your car running like new.</p>
       <a href="#services" className="cta">Our Services</a>
       <div className="car-logo-slider">
@@ -36,6 +41,14 @@ const Hero = () => (
         </div>
       </div>
     </div>
+  </section>
+
+);
+
+const About = () => (
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are a team of experienced mechanics who are passionate about keeping your car in top shape.</p>
   </section>
 );
 
@@ -59,12 +72,6 @@ const Services = () => (
   </section>
 );
 
-const About = () => (
-  <section id="about">
-    <h2>About Us</h2>
-    <p>We are a team of experienced mechanics who are passionate about keeping your car in top shape.</p>
-  </section>
-);
 
 const Contact = () => (
   <section id="contact">
@@ -93,7 +100,7 @@ const App = () => {
   return (
     <>
       <Navbar logoSrc={logoSrc} />
-      <Hero />
+      <Hero logoSrc={logoSrc}/>
       <Services />
       <About />
       <Contact />
