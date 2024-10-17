@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const kontaktRoute = require('./routes/kontakt');
+const path = require('path');
 
 dotenv.config()
 
@@ -15,6 +16,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '../frontend/public')));
 
 app.use('/api', kontaktRoute);
 

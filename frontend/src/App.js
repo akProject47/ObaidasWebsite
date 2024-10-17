@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/App.css'; // Import your styles here
+import useImageLoader from './components/imageLoader';
 
 const App = () => {
+  const logoSrc = useImageLoader('/resources/SandvikensautomotiveLogo.png');
+
   return (
     <>
   <header>
     <div className="navbar">
-      <a href="/">
-        <img src='..\public\resources\SandvikensautomotiveLogo.png' alt='Company Logo' className="logo"/>
-      </a>
+        <a href="/">
+          {logoSrc && <img src={logoSrc} alt='Company Logo' />}
+        </a>
       <nav>
         <ul>
           <li><a href="#services">Services</a></li>
@@ -25,7 +28,6 @@ const App = () => {
       <h2>Your Trusted Car Mechanic</h2>
       <p>We keep your car running like new.</p>
       <a href="#services" className="cta">Our Services</a>
-
       <div className="car-logo-slider">
           <div className="car-logo-track">
             <img src='../public/resources/logos/bmw-logo.png' alt="BMW Logo" />
@@ -38,9 +40,7 @@ const App = () => {
             <img src='../public/resources/logos/ford-logo.png' alt="Ford Logo" />
             </div>
         </div>
-
     </div>
-
   </section>
 
   <section id="services">

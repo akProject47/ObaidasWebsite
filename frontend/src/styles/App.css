@@ -74,7 +74,7 @@
   }
 
   .car-logo-slider {
-    position: fixed;
+    position: absolute;
     bottom: 0; /* Stick to the bottom of the hero section */
     left: 0;
     width: 100%;
