@@ -1,10 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-import { PORT } from '../config';
+const config = require('../config');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
-const contactRoute = require('./routes/contact').default;
+const contactRoute = require('./routes/contact');
 const path = require('path');
 
 
@@ -25,6 +25,6 @@ app.use((err, req, res, next) => {
     });
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running on https://localhost:${PORT}`);
+app.listen(config.PORT, () => {
+    console.log(`Server is running on ${config.API_URL}`);
 });

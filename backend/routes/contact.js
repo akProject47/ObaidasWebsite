@@ -1,8 +1,8 @@
-import { Router } from 'express';
-const router = Router();
+const express = require('express');
+const router = express.Router();
 
 router.get('/contact', (req, res) => {
     res.json({ message: 'Contact data here' });
 });
 
-export default router;
+module.exports = router;
